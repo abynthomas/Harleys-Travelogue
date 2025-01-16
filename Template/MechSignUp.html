@@ -1,0 +1,72 @@
+{% extends 'Common Page.html' %}
+
+
+{% block body %}
+<div class="input-info">
+
+
+</div>
+<div class="form-body form-body-info">
+	<center>
+		<h1 style="font-size: larger;">REGISTER</h1>
+	</center>
+	<form method="post">
+		{% csrf_token %}
+		<div class="form-group valid-form">
+			<input type="text" class="form-control" id="inputName" name="mname" placeholder="Name" required="">
+			<input type="text" class="form-control" id="inputName" name="maddress" placeholder="Address" required="">
+			<div class="form-group">
+				<!-- <input type="text" pattern="[0-9]{6}" title="six digit required" class="form-control" id="inputName" name="pincode" placeholder="Pincode" required="">
+												<span class="help-block"> 6 digits</span> -->
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="radio">
+				<!-- <label>
+													  <input type="radio" name="gender" value="Male" required="">
+													  Male
+													</label>
+												</div>
+												<div class="radio">
+													<label>
+													<input type="radio" name="gender" value="Female" required="">
+													Female
+													</label>
+												</div> -->
+			</div>
+			<input type="text" pattern="[0-99]{2}" class="form-control" id="inputName" name="mexp"
+				placeholder="Experience" required="">
+			<input type="text" class="form-control" id="inputName" name="mdist" placeholder="District" required="">
+			<input type="text" class="form-control" id="inputName" name="mloc" placeholder="Location" required="">
+			<div class="form-group has-feedback">
+				<input type="email" class="form-control" name="email" placeholder="Email"
+					data-error="That email address is invalid" required="">
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<span class="help-block with-errors"></span>
+			</div>
+			<div class="form-group">
+				<input type="text" pattern="[789][0-9]{9}" maxlength="10" class="form-control" id="inputName"
+					name="phone" placeholder="Mobile" required="">
+				<span class="help-block"> </span>
+			</div>
+			<div class="form-group">
+				<input type="password" data-minlength="6" class="form-control" id="inputPassword" name="Password"
+					placeholder="Password" required="">
+				<span class="help-block">Minimum of 6 characters</span>
+			</div>
+
+			<div class="form-group">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" id="terms" data-error="Before you wreck yourself" required="">
+						I have read and accept terms of use.
+					</label>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" name="submit" class="btn btn-primary" value="submit" />
+			</div>
+	</form>
+</div>
+{% endblock %}
